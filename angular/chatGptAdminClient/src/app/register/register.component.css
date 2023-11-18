@@ -1,0 +1,22 @@
+.form-group {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.buttonDiv {
+    text-align: center;   
+}
+
+label {
+    margin-right: 20px;
+}
+
+.register-link {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.link {
+    color: blue;
+    text-decoration: underline;
+}

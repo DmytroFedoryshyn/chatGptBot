@@ -1,0 +1,19 @@
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+<form>
+  <div class="form-group">
+    <label for="username">Username:</label>
+    <input type="text" required #us>
+  </div>
+  <div class="form-group">
+    <label for="password">Password:</label>
+    <input type="password" required #ps>
+  </div>
+  <div class="buttonDiv">
+    <button type="button" (click)="register(us.value, ps.value)">Register</button>
+  </div>
+</form>
+
+<div class="register-link">
+  Already have an account? <a class = "link" (click)="goToLogin()">Login</a>
+</div>

@@ -1,0 +1,32 @@
+<h3>View Chats</h3>
+
+<div>
+  <label for="pageNumber">Page Number:</label>
+  <input type="number"  min="0" value="0" [(ngModel)]="pageNumber"  (input)="onPageNumberChange($event)"/>
+</div>
+
+<div class = "bottomDiv">
+  <label for="pageSize">Page Size:</label>
+  <input type="number"  [(ngModel)]="pageSize" min="1" value="1" (input)="onPageSizeChange($event)"/>
+</div>
+
+<table>
+    <thead>
+      <tr>
+        <th>Telegram Chat ID</th>
+        <th>Name - Nickname</th>
+    
+        <th></th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let obj of list">
+        <td>{{ obj.chatId  }}</td>
+        <td>{{ obj.fullName  }}</td>
+
+        <td><button (click)="sendMessage(obj)">Send Message</button></td>
+        <td><button (click)="viewChatHistory(obj)">View Chat History</button></td>
+      </tr>
+    </tbody>
+  </table>

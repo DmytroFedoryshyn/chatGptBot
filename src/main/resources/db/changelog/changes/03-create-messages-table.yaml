@@ -1,0 +1,36 @@
+databaseChangeLog:
+  - changeSet:
+      id: createMessageTable
+      author: DmytroFedoryshyn
+      changes:
+        - createTable:
+            tableName: messages
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: role
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: content
+                  type: TEXT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: telegram_user
+                  type: BIGINT
+                  constraints:
+                    foreignKeyName: fk_telegram_user
+                    references: telegram_users(id)
+              - column:
+                  name: timestamp
+                  type: BIGINT
+                  constraints:
+                    nullable: false

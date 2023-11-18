@@ -1,0 +1,28 @@
+<h3>{{title}}</h3>
+
+<div class = "topDiv">
+  <label for="pageNumber">Page Number:</label>
+  <input type="number"  min="0" value="0" [(ngModel)]="pageNumber"  (input)="onPageNumberChange($event)"/>
+</div>
+
+<div class = "bottomDiv">
+  <label for="pageSize">Page Size:</label>
+  <input type="number"  [(ngModel)]="pageSize" min="1" value="1" (input)="onPageSizeChange($event)"/>
+</div>
+<table>
+    <thead>
+      <tr>
+        <th>Role</th>
+        <th>Content</th>
+    </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let obj of list">
+        <td [ngClass]="{'admin': obj.role === 'admin', 'assistant': obj.role === 'assistant', 'user': obj.role === 'user'}">
+          {{ obj.role === 'admin' ? 'Admin' : (obj.role === 'assistant' ? 'Bot' : (obj.role === 'user' ? username : obj.role)) }}
+
+        </td>
+        <td>{{ obj.content  }}</td>
+      </tr>
+    </tbody>
+  </table>

@@ -1,0 +1,11 @@
+<body>
+<div class = "labelDiv"> <label for="messageInput">Message:</label></div>
+    <div>
+       
+        <textarea id="messageInput" name="message" placeholder="Type your message..." rows="4" required #text></textarea>
+        
+    </div>
+
+    <div class = "buttonDiv"><button  (click)="sendMessage(text.value)">Send Message</button></div>
+
+</body>
